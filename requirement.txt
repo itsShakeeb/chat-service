@@ -1,0 +1,46 @@
+🟢 Basic Features (MVP)
+| Feature                                     | Description                                       |
+| ------------------------------------------- | ------------------------------------------------- |
+| 💬 Real-time chat (WebSocket or Socket.IO)  | Enable 1:1 chat between user and agent            |
+| 🧾 Chat session initiation                  | User triggers "Need Help" from order screen       |
+| 👤 Agent assignment (manual or round-robin) | Assign support agent to chat                      |
+| 📨 Message persistence                      | Store messages in MongoDB (for audit & UI reload) |
+| 🕒 Timestamps & read receipts               | Show when messages were sent and seen             |
+| 📱 REST API for historical messages         | User/agent can reload last chat                   |
+
+🟡 Intermediate Features
+| Feature                                | Description                                         |
+| -------------------------------------- | --------------------------------------------------- |
+| 📁 Media Support                       | Allow images (e.g. food not delivered photo)        |
+| 📍 Order context                       | Attach order ID, issue category to the chat         |
+| 👨‍🔧 Agent dashboard                  | View active users, join sessions                    |
+| ⏰ Typing indicator & online presence   | UX improvement                                      |
+| 🕓 Auto-close idle chats               | Close after X mins of inactivity                    |
+| 🧾 Predefined messages (Quick replies) | "Hi! How can I help you?" buttons                   |
+| 🔄 Chat handoff                        | Escalate to supervisor or transfer to another agent |
+| 🚫 Spam prevention                     | Limit abuse or bot chats                            |
+
+🟠 Advanced Features
+| Feature                          | Description                                                    |
+| -------------------------------- | -------------------------------------------------------------- |
+| 🧠 Bot-to-Human Handoff          | Auto-responder/bot starts chat, hands off to human if needed   |
+| 🔔 Notification Integration      | Alert user of new reply via your existing notification service |
+| 📊 Analytics                     | Avg. wait time, resolution time, message volume                |
+| 📂 Chat categorization & tagging | "Refund", "Late delivery", "Rude agent" etc.                   |
+| 📜 Chat transcript export        | Download entire chat history                                   |
+| 🌐 i18n & emoji support          | Support regional languages and rich text                       |
+| 🧪 Quality Monitoring            | Supervisor reviews random chats for quality                    |
+| 🛠️ Admin tools                  | Mute/ban abusive users, agent status updates                   |
+| 🤖 Agent assist                  | Suggest replies using LLMs or templates                        |
+
+
+📦 Suggested Tech Stack
+
+| Component                | Tech                                   |
+| ------------------------ | -------------------------------------- |
+| WebSocket Layer          | Socket.IO (Node.js)                    |
+| Message Queue (optional) | Redis Pub/Sub (for multi-instance)     |
+| Storage                  | MongoDB (Chat collection per session)  |
+| Auth                     | JWT or Session-based (support vs user) |
+| Frontend (later)         | React Chat Widget or Mobile SDK        |
+| File uploads             | AWS S3 / Cloudinary                    |
